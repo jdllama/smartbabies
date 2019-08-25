@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Smart Babies 🧠👶</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+      .row {
+        margin-bottom:12px;
+      }
+      
+      #timeRemainingShow, #timeRemainingNextInterruption {
+        font-family: "Orbitron", sans-serif;
+            font-size: 2.5em;
+      }
+    </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="babysitterData.js"></script>
+    <script src="babysitterLogic.js"></script>
+  </head>
+  <body>
+    <audio id="alert" src="https://cdn.glitch.com/6a3c7d89-fd40-484e-a9f0-c33214fb289c%2Falert.mp3?v=1566177391616" volume="1.0"></audio>
+    <div class="container">
+        <div class="row">
+          <div class="col col-sm-12">
+            <h1 class="text-center">
+            Smart Babies 🧠👶
+          </h1>  
+          </div>
+
+        </div>
+    </div>
+    <div class="container" id="settings">
+      <div class="row" >
+        <div class="col col-sm-3">
+          <h4>
+            The Babies
+          </h4>
+        </div>
+        <div class="col col-sm-9" id="theGang"></div>
+      </div>
+      <div class="row">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col col-sm-3">
+              Show Length:
+            </div>
+            <div class="col col-sm-2">
+              <input type="text" class="form-control" style="border:0" id="showLength" readonly />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-10">
+              <input type="range" class="form-control-range" min="60" max="3600" step="60" id="slideShow" /> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col col-sm-3">
+              Gap Range:
+            </div>
+            <div class="col col-sm-2">
+              <input type="text" class="form-control" style="border:0" id="gapRange" readonly />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-10">
+              <div id="slider-range" style="width:100%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col col-sm-3">
+              Audience Participation:
+            </div>
+            <div class="col col-sm-2">
+              <input type="text" class="form-control" style="border:0" id="audienceVal" readonly />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-10">
+              <input type="range" class="form-control-range" min="0" max="1" value="0.6" step="0.01" disabled id="audienceSlider" /> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <button id="beginShow">
+          Start the Show
+        </button>
+      </div>
+</div>
+    <div class="container" id="gameTime" style="display:none">
+      <div class="row">
+        <div class="col col-sm-6" id="timeRemainingShow">
+          00:00:00
+        </div>
+        <div class="col col-sm-6" id="timeRemainingNextInterruption">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-sm-6" id="">
+          Show Timer
+        </div>
+        <div class="col col-sm-6" id="">
+          Change Timer
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-sm-12" id="log" style="display:none">
+          
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="container">
+      <div class="row">
+        <p>
+          This was written by J.D. Lowe in 2019 based off of <a href="http://www.comedylab.info/techprov/wrench.php" target="_blank" >Improv Wrench</a> with permission from the original author, Marissa Farmer.
+        </p>
+      </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=6wqgGhKI"></script>
+  </body>
+</html>
